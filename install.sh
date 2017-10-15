@@ -120,7 +120,7 @@ function Install {
 	read key
 	if [ $key = "1" ];then
 		kill80
-		wget -N --no-check-certificate https://raw.githubusercontent.com/arnofeng/ngx_google_deployment/master/Debian/nginx_proxy.sh
+		wget -N --no-check-certificate https://raw.githubusercontent.com/arnofeng/cbwang2016/master/Debian/nginx_proxy.sh
 		chmod 771 ./nginx_proxy.sh
 		bash ./nginx_proxy.sh
 	elif [ $key = "2" ]; then
