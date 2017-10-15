@@ -5,13 +5,13 @@ export PATH
 #   System Required:  Centos/Debian/Ubuntu
 #   Description:  Install Proxy for Google by Nginx
 #   Author: Arno <blogfeng@blogfeng.com>
-#   Intro:  https://github.com/arnofeng/ngx_google_deployment
+#   Intro:  https://github.com/cbwang2016/ngx_google_deployment
 #===============================================================================================
 clear
 echo "
 #This shell is for Nginx_proxy_google
-#This project is on url:https://github.com/arnofeng/ngx_google_deployment
-#Current release is Nginx-1.8.0
+#This project is on url:https://github.com/cbwang2016/ngx_google_deployment
+#Current release is Nginx-1.10.3
 #Thank you for any feedback to me:blogfeng@blogfeng.com
 "
 # Make sure only root can run our script
@@ -46,7 +46,7 @@ function update {
     fi
 	mkdir -p /etc/nginx/vhost
 	cd /usr/src
-	wget -N --no-check-certificate https://raw.githubusercontent.com/arnofeng/ngx_google_deployment/master/nginx.conf	
+	wget -N --no-check-certificate https://raw.githubusercontent.com/cbwang2016/ngx_google_deployment/master/nginx.conf	
 	sed -i "s#g.adminhost.org#$DOMAIN1#g" /usr/src/nginx.conf
 	sed -i "s#x.adminhost.org#$DOMAIN2#g" /usr/src/nginx.conf
 	cp -r -f /usr/src/nginx.conf /etc/nginx/nginx.conf
@@ -120,12 +120,12 @@ function Install {
 	read key
 	if [ $key = "1" ];then
 		kill80
-		wget -N --no-check-certificate https://raw.githubusercontent.com/arnofeng/cbwang2016/master/Debian/nginx_proxy.sh
+		wget -N --no-check-certificate https://raw.githubusercontent.com/cbwang2016/ngx_google_deployment/master/Debian/nginx_proxy.sh
 		chmod 771 ./nginx_proxy.sh
 		bash ./nginx_proxy.sh
 	elif [ $key = "2" ]; then
 		kill80
-		wget -N --no-check-certificate https://raw.githubusercontent.com/arnofeng/ngx_google_deployment/master/Centos/nginx_proxy.sh
+		wget -N --no-check-certificate https://raw.githubusercontent.com/cbwang2016/ngx_google_deployment/master/Centos/nginx_proxy.sh
 		chmod 771 ./nginx_proxy.sh
 		bash ./nginx_proxy.sh
 	elif [ $key = "3" ]; then
