@@ -67,7 +67,7 @@ cd /usr/src
 wget -N http://nginx.org/download/nginx-1.10.3.tar.gz
 tar -zxvf nginx-1.10.3.tar.gz
 #4.download  ngx_http_substitutions_filter_module
-wget -N --no-check-certificate https://raw.githubusercontent.com/arnofeng/ngx_google_deployment/master/ngx_http_substitutions_filter_module.tar.gz
+wget -N --no-check-certificate https://raw.githubusercontent.com/cbwang2016/ngx_google_deployment/master/ngx_http_substitutions_filter_module.tar.gz
 tar -zxvf ngx_http_substitutions_filter_module.tar.gz
 #5.configure for nginx
 cd /usr/src/nginx-1.10.3
@@ -77,7 +77,7 @@ mkdir -p /var/lib/nginx/body
 make && make install
 #7.download nginx.conf
 cd /usr/src
-wget -N --no-check-certificate https://raw.githubusercontent.com/arnofeng/ngx_google_deployment/master/nginx.conf
+wget -N --no-check-certificate https://raw.githubusercontent.com/cbwang2016/ngx_google_deployment/master/nginx.conf
 cp -r -f nginx.conf /etc/nginx/nginx.conf
 sed -i "s#g.adminhost.org#$DOMAIN1#g" /etc/nginx/nginx.conf
 sed -i "s#x.adminhost.org#$DOMAIN2#g" /etc/nginx/nginx.conf
@@ -88,7 +88,7 @@ mkdir -p /etc/nginx/cache/three
 #8.mkdir /var/www/
 mkdir -p /var/www/google
 cd /var/www/google
-wget -N --no-check-certificate https://raw.githubusercontent.com/arnofeng/ngx_google_deployment/master/index.html
+wget -N --no-check-certificate https://raw.githubusercontent.com/cbwang2016/ngx_google_deployment/master/index.html
 sed -i "s#g.adminhost.org#$DOMAIN1#g" /var/www/google/index.html
 sed -i "s#x.adminhost.org#$DOMAIN2#g" /var/www/google/index.html
 #9.set auto-start for nginx
